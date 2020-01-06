@@ -1,0 +1,15 @@
+body{
+    background: linear-gradient(#e66465, #9198e5);
+}
+h1{
+    text-align: center;
+}
+.form-control{
+    font-size: 15px;
+}
+.card{
+    background-color: black;
+}
+form{
+    background-color: black;
+}
