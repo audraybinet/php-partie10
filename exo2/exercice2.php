@@ -40,20 +40,17 @@ include 'control.php';
                             <option value="Autre" disabled>Autre</option>
                         </select>
                         <?php if (!empty($_POST)) { ?><p class="alert alert-danger"><?= empty($errorLog['gender']) ? $gender : $errorLog['gender']; ?></p><?php } ?>
-             
                 </div>
                 <div class="form-group">
                     <label for="lastname" >Nom</label>
                         <input class="form-control" type="text" id="lastname" name="lastname" value="<?= $lastname; ?>" />
                         <?php if (!empty($_POST)) { ?><p class="alert alert-danger"><?= empty($errorLog['lastname']) ? $lastname : $errorLog['lastname']; ?></p><?php } ?>
-            
                 </div>
                 <div class="form-group">
                     <label for="firstname" >Prénom</label>
      
                         <input class="form-control" id="firstname" type="text" name="firstname" value="<?= $firstname; ?>" />
                         <?php if (!empty($_POST)) { ?><p class="alert alert-danger"><?= empty($errorLog['firstname']) ? $firstname : $errorLog['firstname']; ?></p><?php } ?>
-           
                 </div>
                 <div class="form-group">
                     <label for="age" >Age</label>
@@ -61,8 +58,7 @@ include 'control.php';
                         <?php if (!empty($_POST)) { ?><p class="alert alert-danger"><?= empty($errorLog['age']) ? $age : $errorLog['age']; ?></p><?php } ?>
                 </div>
                 <div class="form-group">
-                    <label for="society" class="col-2 col-form-label">Société</label>
-              
+                    <label for="society" >Société</label>
                         <input class="form-control" id="society" type="text" name="society" value="<?= $society; ?>" />
                         <?php if (!empty($_POST)) { ?><p class="alert alert-danger"><?= empty($errorLog['society']) ? $society : $errorLog['society']; ?></p><?php } ?>
                 </div>

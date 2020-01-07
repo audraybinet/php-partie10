@@ -76,6 +76,7 @@ include 'control.php';
                         </select>
                         <?php if(isset($_POST['submit']) && $nationChoiceErrorMessage != null){ ?> <p class="alert alert-danger"><?= $nationChoiceErrorMessage; ?></p><?php } ?>
                     </div>
+                    
                 </div> 
                 <div class="form-group row">
                     <label for="address" class="col-2 col-form-label">Adresse</label>
