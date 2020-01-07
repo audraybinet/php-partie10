@@ -47,7 +47,7 @@ if(!empty($_POST)){
             <div class ="row justify-content-center">
                 <div class="card">
                     <img class="card-img-top" src="ca.jpg" alt="ca">
-  <form action="index.php" method="post">
+  <form action="" method="post">
       <input type="text" name="number1" value="<?= $number1; ?>"/>
       <input type="text" name="number2" value="<?= $number2; ?>"/>
       <input type="submit" name="addition" value="+"/>
@@ -56,7 +56,7 @@ if(!empty($_POST)){
       <input type="submit" name="division" value="/"/>
       <input type="submit" name="reset" value="C"/>
     </form>
-    <p>Résultat : <?= $result; ?></p>
+    <p style="text-align:center">Résultat : <?= $result; ?></p>
                 </div>
             </div>
         </div>
