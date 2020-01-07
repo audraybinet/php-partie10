@@ -27,9 +27,4 @@ if(!empty($_POST)){
 !empty($_POST['society']) ? $society = htmlspecialchars($_POST['society']) : $errorLog['society'] = 'Veuillez saisir une société';
 }
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 

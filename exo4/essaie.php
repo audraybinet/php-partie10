@@ -1,3 +1,36 @@
+<?php
+$result = 0;
+$number1 = 0;
+$number2 = 0;
+// Verification des nombres et changement de leur valeur
+(!empty($_POST['number1']) && is_numeric($_POST['number1']))? $number1 = $_POST['number1'] : $number1 = $number1;
+(!empty($_POST['number2']) && is_numeric($_POST['number2']))? $number2 = $_POST['number2'] : $number2 = $number2;
+// Si on envoi une requete on execute le code
+if(!empty($_POST)){
+        // addition
+    if (isset($_POST['addition'])){
+        $result = $number1 + $number2;
+    }
+        // soustraction
+    if(isset($_POST['soustraction'])){
+        $result = $number1 - $number2;
+    }
+        // multiplication
+    if(isset($_POST['multiplication'])){
+        $result = $number1 * $number2;
+    }
+        // division
+    if(isset($_POST['division'])){
+        $result = $number1 / $number2;
+    }
+        // reset
+    if(isset($_POST['reset'])){
+        $result = 0;
+        $number1 = 0;
+        $number2 = 0;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,69 +46,17 @@
         <div class="container">
             <div class ="row justify-content-center">
                 <div class="card">
-                                    <img class="card-img-top" src="ca.jpg" alt="ca">
-                    <?php
-                    if (isset($_GET['op1'])) {
-                        $op1 = $_GET['op1'];
-                    } else {
-                        $op1 = 0;
-                    }
-                    if (isset($_GET['op2'])) {
-                        $op2 = $_GET['op2'];
-                    } else {
-                        $op2 = 0;
-                    }
-                    if (isset($_GET['operation'])) {
-                        $operation = $_GET['operation'];
-                    } else {
-
-                        $operation = null;
-                    }
-                    //$operation=$_GET['operation'];
-
-                    switch ($operation) { // on indique sur quelle variable on travaille
-                        case "add":
-                            $res = $op1 + $op2;
-                            echo $op1 . "+" . $op2 . " = " . $res;
-                            break;
-                        case "mult":
-                            $res = $op1 * $op2;
-                            echo $op1 . "*" . $op2 . " = " . $res;
-                            break;
-                        case "sub":
-                            $res = $op1 - $op2;
-                            echo $op1 . "-" . $op2 . " = " . $res;
-                            break;
-                        case "div":
-                            if ($op2 != 0) {
-                                $res = $op1 / $op2;
-                            } else {
-                                $res = "Div 0 !";
-                            }
-
-                            echo $op1 . "/" . $op2 . " = " . $res;
-                            break;
-                        default:
-                            echo "Entrer les valeurs";
-                    }
-                    ?>
-                    <form method="get" action="#">
-                        <label>Calculatrice</label> :
-                        <input type="number" name="op1" value="<?php
-                        if (isset($_GET['operation'])) {
-                            echo $res;
-                        }
-                        ?>" id="op1">
-                        <select name="operation">
-                            <option value="add">Additionner</option>
-                            <option value="mult">Multiplier</option>
-                            <option value="sub">Soustraire</option>
-                            <option value="div">Diviser</option>
-                        </select> 
-                        <input type="number" name="op2" id="op2">
-                        <br/>
-                        <input type="submit" value="Envoyez">
-                    </form>
+                    <img class="card-img-top" src="ca.jpg" alt="ca">
+  <form action="index.php" method="post">
+      <input type="text" name="number1" value="<?= $number1; ?>"/>
+      <input type="text" name="number2" value="<?= $number2; ?>"/>
+      <input type="submit" name="addition" value="+"/>
+      <input type="submit" name="soustraction" value="-"/>
+      <input type="submit" name="multiplication" value="*"/>
+      <input type="submit" name="division" value="/"/>
+      <input type="submit" name="reset" value="C"/>
+    </form>
+    <p>Résultat : <?= $result; ?></p>
                 </div>
             </div>
         </div>
