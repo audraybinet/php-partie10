@@ -1,6 +1,4 @@
-<?php
-include 'function.php';
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -14,13 +12,17 @@ include 'function.php';
         <h2>Faire une fonction qui permet d'afficher les données des tableaux </h2>
         <div class ="container">
             <div class ="row justify-content-center ">
-                <div class="card">
-                    <img class="card-img-top" src="Ultravomit.jpg" alt="deco">
-                    <div class="card-body">
-                        <?php for ($i = 1; $i <= 4; $i++) { ?>
-                            <p><?php showArray(${'portrait' . $i}); ?></p>
-                        <?php } ?>
-                    </div>
+                                  <?php
+include 'function.php';
+?>
+                        <?php
+        function showArray($array) {
+
+            ?>
+            <div>
+                <p><?= $array['name'] . ' ' . $array['firstname'] . ' ' ?></p>
+                <p><img src=" <?= $array['portrait']; ?>" height = "400px"  width = "350px" /></p>
+            </div> <?php } ?>
                 </div>
             </div>
         </div>
