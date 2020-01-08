@@ -1,12 +1,4 @@
-<!--Faire une page permettant de saisir les informations suivantes :
-- Civilité (liste déroulante)
-- Nom
-- Prénom
-- Age
-- Société
 
-A la validation, les données saisies devront aparaitre sous le formulaire. 
-Attention les données devront rester dans les différents éléments du formulaire même après la validation. -->
 <?php
 //import
 include 'regex.php';
